@@ -15,11 +15,21 @@ def navigate_to(page_name):
 if st.session_state["page"] == "selection":
     # Page Title and Subtitle
     st.markdown("""
-        <div style="padding: 20px;">
-            <h1 style="text-align: center;">ELEGANTE CAFE</h1>
-            <h3 style="text-align: center;">Please order as you please!</h3>
-        </div>
-        """, unsafe_allow_html=True)
+    <style>
+    .custom-title {
+        font-family: 'Courier New', Courier, monospace; /* Change this to any font you like */
+        color: #ff5733; /* Change this color to any HEX or RGB value */
+        font-size: 36px;
+    }
+    .custom-text {
+        font-family: 'Verdana', sans-serif;
+        color: #3498db; /* Blue color */
+        font-size: 24px;
+    }
+    </style>
+    <div class="custom-title">Welcome to Elegante Café</div>
+    <div class="custom-text">Order your favorite items with ease!</div>
+    """, unsafe_allow_html=True)
 
     # Quantity Selection Section
     st.write("### Select Quantity for Each Item")
