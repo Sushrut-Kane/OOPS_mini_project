@@ -2,7 +2,7 @@ import streamlit as st
 from inventory import items
 from price import calculate_total_price
 from reciept import generate_pdf_receipt  
-# Initialize session state for navigation
+
 if "page" not in st.session_state:
     st.session_state["page"] = "selection"
 
@@ -50,7 +50,7 @@ if st.session_state["page"] == "selection":
         st.session_state["selected_quantities"] = selected_quantities
         navigate_to("order")
 
-# Order Page
+
 elif st.session_state["page"] == "order":
     st.markdown("""
         <div style="padding: 20px;">
@@ -80,6 +80,6 @@ elif st.session_state["page"] == "order":
     else:
         st.write("No items selected. Please go back and add items to your order.")
 
-    # Back button to return to the selection page
+    
     if st.button("Back to Selection"):
         navigate_to("selection")
