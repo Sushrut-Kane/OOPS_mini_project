@@ -1,13 +1,12 @@
 import streamlit as st
 from inventory import items
 from price import calculate_total_price
-from reciept import generate_pdf_receipt  # Import the receipt function
-
+from reciept import generate_pdf_receipt  
 # Initialize session state for navigation
 if "page" not in st.session_state:
     st.session_state["page"] = "selection"
 
-# Function to navigate to a different page
+
 def navigate_to(page_name):
     st.session_state["page"] = page_name
 
@@ -46,7 +45,7 @@ if st.session_state["page"] == "selection":
             key=item_name
         )
 
-    # Proceed Button
+    
     if st.button("Proceed to Order"):
         st.session_state["selected_quantities"] = selected_quantities
         navigate_to("order")
